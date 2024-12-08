@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadStatus", "TflRoad\RoadStatus.csproj", "{24135632-1736-4C72-B8E1-EC6E85A9C028}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TflRoad.Application", "TflRoad.Application\TflRoad.Application.csproj", "{9B5AD3FC-D4C7-43EA-9300-799667886D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TflRoad.Infrastructure", "TflRoad.Infrastructure\TflRoad.Infrastructure.csproj", "{4EB49DC8-288F-4B4C-8FA8-4A3E38A73793}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TflRoad.UnitTests", "TflRoad.UnitTests\TflRoad.UnitTests.csproj", "{5621FBC6-E95E-47E7-94F0-101BDA70E9FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0DE19DE8-6E75-4B0A-BEC8-A6956B4E9D1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TflRoad.AcceptanceTests", "TflRoad.AcceptanceTests\TflRoad.AcceptanceTests.csproj", "{952EBBE2-EDCD-4245-8F4F-8EE503964244}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24135632-1736-4C72-B8E1-EC6E85A9C028}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24135632-1736-4C72-B8E1-EC6E85A9C028}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24135632-1736-4C72-B8E1-EC6E85A9C028}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24135632-1736-4C72-B8E1-EC6E85A9C028}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B5AD3FC-D4C7-43EA-9300-799667886D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5AD3FC-D4C7-43EA-9300-799667886D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5AD3FC-D4C7-43EA-9300-799667886D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5AD3FC-D4C7-43EA-9300-799667886D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB49DC8-288F-4B4C-8FA8-4A3E38A73793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB49DC8-288F-4B4C-8FA8-4A3E38A73793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB49DC8-288F-4B4C-8FA8-4A3E38A73793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB49DC8-288F-4B4C-8FA8-4A3E38A73793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5621FBC6-E95E-47E7-94F0-101BDA70E9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5621FBC6-E95E-47E7-94F0-101BDA70E9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5621FBC6-E95E-47E7-94F0-101BDA70E9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5621FBC6-E95E-47E7-94F0-101BDA70E9FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{952EBBE2-EDCD-4245-8F4F-8EE503964244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952EBBE2-EDCD-4245-8F4F-8EE503964244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952EBBE2-EDCD-4245-8F4F-8EE503964244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952EBBE2-EDCD-4245-8F4F-8EE503964244}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5621FBC6-E95E-47E7-94F0-101BDA70E9FC} = {0DE19DE8-6E75-4B0A-BEC8-A6956B4E9D1E}
+		{952EBBE2-EDCD-4245-8F4F-8EE503964244} = {0DE19DE8-6E75-4B0A-BEC8-A6956B4E9D1E}
+	EndGlobalSection
+EndGlobal
