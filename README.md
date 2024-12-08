@@ -15,7 +15,7 @@ TfL maintains an open data REST API at [TfL API](https://api.tfl.gov.uk). You wi
   }
 }
 ```
-If you wish to test in a different API environment, you can modify the `BaseAPIAddress` in setting.
+If you wish to test in a different API environment, you can modify the `BaseAPIAddress` in the setting.
 
 ### Project Structure:
 We followed the Clean Architecture pattern for this project. The API is located in the bottom layers. To avoid coupling the app directly to the API, we introduced a service called `RoadService`, which converts the API output to the project's DTO (Data Transfer Object).
@@ -30,40 +30,22 @@ When the application processes the arguments, it follows these steps:
     
 4.  **Call API:** Fetch data from the API.
 
-### Using Polly for Http Exceptions
-We are using the `Polly` package for managing HTTP exceptions, such as timeouts and circuit breaks. This helps handle network issues during API calls. Polly will retry the request three times with an exponential wait time between attempts.
+### Using Polly for HTTP Exceptions
+We are using the `Polly` package to manage HTTP exceptions, such as timeouts and circuit breaks. This helps handle network issues during API calls. Polly will retry the request three times with an exponential wait time between attempts.
 
 ### Using HttpMessageHandler for AppId,Key
 We are using `DelegateHandler` to manage the TfL App ID and Developer key, which we have named `TflApiIdKeyQueryParameterHandler`. This is a common approach for handling authorization, adding default HTTP headers, and similar tasks.
 
 ### Exit codes:
 The application will exit with the following codes:
--   **0: NoIssue** - The application completed with no issues.
+-   **0: NoIssue** - The application was completed with no issues.
 -   **1: InvalidArguments** - The argument passed to the application is invalid.
 -   **2: InvalidRoadId** - The provided Road ID is invalid when checked with the API.
 -   **3: ApiError** - There was a problem fetching the API results.
 -   **4: UnhandledException** - An unhandled exception occurred during execution.
 
-### Examples
-
-```sh
-PS C:\> .\RoadStatus.exe A2
-The status of the A2 is as follows
-        Road Status is Good
-        Road Status Description is No Exceptional Delays
-PS C:\> echo $lastexitcode
-0
-```
-
-```sh
-PS C:\> .\RoadStatus.exe A233
-A233 is not a valid road
-PS C:\> echo $lastexitcode
-2
-```
-
 ### How to build
-Please call the follwoing command in the main repository folder:
+Please call the following command in the main repository folder:
 ```
 dotnet build
 ```
@@ -88,7 +70,7 @@ You can also debug the app by changing the launch profiles available in the repo
 ```
 
 ### How to run the Tests:
-There are two types of tests available for this project 1-UnitTests and 2-Behavioural Tests, which you can run them by calling follwing command:
+There are two types of tests available for this project 1-UnitTests and 2-Behavioural Tests, which you can run by calling the following command:
 ```
 dotnet test
 ```
@@ -98,12 +80,12 @@ The project Unit-Tests can be found in the `/TflRoad.UnitTests` or in the Visual
 dotnet test TflRoad.UnitTests
 ```
 
-### Behavioural Tests
+#### Behavioural Tests
 We have the Behavioural tests for this application which can be found in `/TflRoad.AcceptanceTests`  or in the Visual Studio solution address `Tests/TflRoad.AcceptanceTests`. To run the Behavioural-Tests, you can call the command:
 ```
 dotnet test TflRoad.AcceptanceTests
 ```
-The behavioral test will run the main app and check four different scenarios:
+The behavioural test will run the main app and check four different scenarios:
 
 1.  **Valid Road ID**: Ensuring the application correctly processes and displays the status for a valid road ID.
     
@@ -114,3 +96,21 @@ The behavioral test will run the main app and check four different scenarios:
 4.  **Too Many Arguments Passed**: Testing how the application handles cases where too many arguments are supplied.
 
 We are using `SpecFlow`  to develop our tests by starting with a new driver to monitor our `RoadStatus.exe`  console application.
+
+### Examples
+
+```sh
+PS C:\> .\RoadStatus.exe A2
+The status of the A2 is as follows
+        Road Status is Good
+        Road Status Description is No Exceptional Delays
+PS C:\> echo $lastexitcode
+0
+```
+
+```sh
+PS C:\> .\RoadStatus.exe A233
+A233 is not a valid road
+PS C:\> echo $lastexitcode
+2
+```
